@@ -1,0 +1,4 @@
+*.p8
+.venv/
+gcs_download/
+*.pub
