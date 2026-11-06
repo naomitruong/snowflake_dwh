@@ -7,3 +7,4 @@ config/
 plugins/
 .env
 .venv-airflow/
+__pycache__/
