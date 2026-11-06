@@ -2,3 +2,8 @@
 .venv/
 gcs_download/
 *.pub
+logs/
+config/
+plugins/
+.env
+.venv-airflow/

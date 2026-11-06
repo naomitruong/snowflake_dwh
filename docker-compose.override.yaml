@@ -1,0 +1,11 @@
+services:
+  airflow-worker:
+    build: .
+    image: snowflake-dwh-airflow:3.3.2
+    environment:
+      PYTHONPATH: /opt/airflow/project
+      SNOWFLAKE_PRIVATE_KEY_PATH: /opt/airflow/secrets/sf_dbt_runner.p8
+    volumes:
+      - ./ingest:/opt/airflow/project/ingest:ro
+      - ./gcs_download:/opt/airflow/project/gcs_download:ro
+      - ./sf_dbt_runner.p8:/opt/airflow/secrets/sf_dbt_runner.p8:ro
