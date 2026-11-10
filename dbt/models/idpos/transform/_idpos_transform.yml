@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: vn_ministop_category_table
+    columns: 
+      - name: id
+        data_tests: [unique, not_null]
+
+  - name: vn_ministop_shop_table
+    columns:
+      - name: id
+        data_tests: [unique, not_null]
+  - name: vn_ministop_supplier_table
+    columns:
+      - name: id
+        data_tests: [unique, not_null]
+
+  - name: vn_ministop_product_table
+    columns:
+      - name: jancode
+        data_tests: [unique, not_null]
