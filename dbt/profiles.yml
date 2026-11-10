@@ -1,0 +1,14 @@
+vn_ministop:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: GOYCSTU-VG36275
+      user: SVC_DBT_RUNNER
+      private_key_path: "{{ env_var('SNOWFLAKE_PRIVATE_KEY_PATH') }}"
+      role: DWH_TRANSFORMER
+      warehouse: WH_DBT
+      database: MSV_DWH_DEV
+      schema: VN_MMS_ALL
+      threads: 4
+      query_tag: vn_ministop

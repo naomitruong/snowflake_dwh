@@ -8,3 +8,7 @@ plugins/
 .env
 .venv-airflow/
 __pycache__/
+.venv-dbt/
+dbt/target/
+dbt/dbt_packages/
+dbt/.user.yml

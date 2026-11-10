@@ -1,12 +1,12 @@
 from datetime import timedelta
 import pendulum
 from airflow.sdk import Param, dag, task
+from airflow.providers.standard.operators.trigger_dagrun import TriggerDagRunOperator
 
-TZ=pendulum.timezone("Asia/Ho_Chi_Minh")
-
+TZ = pendulum.timezone("Asia/Ho_Chi_Minh")
 @dag(
     dag_id="raw_stock_daily",
-    schedule = "0 7 * * 1-5",
+    schedule = "0 5 * * 1-5",
     start_date=pendulum.datetime(2026, 11, 1, tz=TZ),
     catchup=False,
     max_active_runs=1,

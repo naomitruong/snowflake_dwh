@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: raw_stock
+    database: "{{ var('raw_project') or target.database }}"
+    schema: VN_MMS_RAW_STOCK
+    config:
+      loaded_at_field: updated_at
+      freshness:
+        warn_after: {count: 3, period: day}
+        error_after: {count: 5, period: day}
+    tables:
+      - name: category
+      - name: shop
+        identifier: STORE
+      - name: vendor
+      - name: product

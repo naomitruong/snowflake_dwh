@@ -1,0 +1,12 @@
+version: 2
+
+seeds:
+  - name: vn_ministop_supplier_override
+    description: >
+      Products whose supplier is re-assigned (One-Time Vendor → actual maker).
+      Used by vn_ministop_product_table when the received vendor_id equals source_supplier_id.
+    config:
+      column_types:
+        jancode: varchar            # 13 digits with leading zeros
+        source_supplier_id: varchar
+        supplier_id: varchar

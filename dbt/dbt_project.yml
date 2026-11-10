@@ -1,0 +1,27 @@
+name: vn_ministop
+version: "1.0.0"
+profile: vn_ministop
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+seed-paths: ["seeds"]
+clean-targets: ["target","dbt_packages"]
+
+vars:
+  raw_project: null
+  dataset_suffix: ""
+
+models:
+  vn_ministop:
+    idpos:
+      transform:
+        +schema: VN_MMS_ALL
+        +materialized: table
+      view:
+        +schema: VN_MMS
+        +materialized: view
+seeds:
+  vn_ministop:
+    +schema: VN_MMS_ALL
+
+

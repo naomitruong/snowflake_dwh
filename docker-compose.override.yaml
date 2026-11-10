@@ -5,7 +5,12 @@ services:
     environment:
       PYTHONPATH: /opt/airflow/project
       SNOWFLAKE_PRIVATE_KEY_PATH: /opt/airflow/secrets/sf_dbt_runner.p8
+      DBT_PROFILES_DIR: /opt/airflow/project/dbt
+      DBT_TARGET_PATH: /tmp/dbt/target
+      DBT_LOG_PATH: /tmp/dbt/logs
+      DBT_SEND_ANONYMOUS_USAGE_STATS: "false"
     volumes:
       - ./ingest:/opt/airflow/project/ingest:ro
       - ./gcs_download:/opt/airflow/project/gcs_download:ro
       - ./sf_dbt_runner.p8:/opt/airflow/secrets/sf_dbt_runner.p8:ro
+      - ./dbt:/opt/airflow/project/dbt:ro
